@@ -18,7 +18,7 @@ const Hero = ({ scrollYProgress }) => {
   const backgroundScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.3]);
 
 
-  const newLocal = "/jagan.jpg";
+  const newLocal = "https://raw.githubusercontent.com/Jagan2-jj/Portfolio-main/refs/heads/main/jagan.jpg";
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center hero-grid overflow-hidden">
       <motion.div 
