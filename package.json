@@ -1,6 +1,5 @@
 {
   "name": "portfolio-website",
-  "homepage":"https://Jagan2-jj.github.io/Portfolio-main/",
   "type": "module",
   "version": "0.0.0",
   "private": true,
@@ -8,8 +7,6 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
