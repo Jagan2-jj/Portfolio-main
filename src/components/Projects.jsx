@@ -12,7 +12,7 @@ const projects = [
     description: "A comprehensive dashboard for e-commerce businesses with real-time analytics, inventory management, and customer insights.",
     tags: ["Html", "Css", "Javascript", "mongodb", "api"],
     imageAlt: "Epic food recipe dashboard showcasing a modern UI with charts and data visualizations",
-    imageSrc: "p1.png", // Add this line
+    imageSrc: "p1.PNG", // Add this line
     liveUrl: "https://example.com/project1",
     githubUrl: "https://github.com/Jagan2-jj/myproject"
   },
@@ -32,7 +32,7 @@ const projects = [
     description: "A visually stunning portfolio website for a digital artist, featuring interactive galleries and smooth animations.",
     tags: ["React", "Three.js", "GSAP", "Netlify"],
     imageAlt: "Creative portfolio website with interactive 3D elements and image galleries",
-    imageSrc: "p2.png", // Add this line
+    imageSrc: "p2.PNG", // Add this line
     liveUrl: "https://example.com/project3",
     githubUrl: "https://github.com/username/project3"
   },
