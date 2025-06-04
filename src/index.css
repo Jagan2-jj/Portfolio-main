@@ -1,0 +1,170 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* Light mode background */
+    --foreground: 240 10% 3.9%; /* Light mode text */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    
+    --primary: 252 87% 67%;
+    --primary-foreground: 0 0% 98%; /* Text on primary bg */
+    
+    --secondary: 217 76% 56%;
+    --secondary-foreground: 0 0% 98%; /* Text on secondary bg */
+    
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    
+    --accent: 191 91% 58%;
+    --accent-foreground: 240 10% 3.9%; /* Text on accent bg */
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%; /* Dark mode background */
+    --foreground: 0 0% 98%; /* Dark mode text */
+    
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 252 87% 67%; 
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 217 76% 56%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    
+    --accent: 191 91% 58%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply transition-colors duration-300;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary;
+}
+
+.glass-card {
+  @apply bg-card/80 dark:bg-black/30 backdrop-blur-md border border-border dark:border-white/10 rounded-xl shadow-xl;
+}
+
+.animated-border {
+  position: relative;
+  /* Ensure this matches image rounding for perfect fit, e.g. rounded-full for circular images */
+  overflow: hidden;
+}
+
+.animated-border.p-1.rounded-full {
+  border-radius: 9999px; /* for full circle */
+}
+.animated-border.p-1 { /* default for rectangular images */
+  border-radius: 0.75rem; 
+}
+
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--secondary)), hsl(var(--primary)));
+  background-size: 400% 400%;
+  animation: border-animation 8s ease infinite;
+}
+
+@keyframes border-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-grid {
+  background-image: 
+    linear-gradient(to bottom, hsl(var(--background) / 0.8), hsl(var(--background) / 0.3)),
+    radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, hsl(var(--secondary) / 0.15) 0%, transparent 50%);
+  background-size: 100% 100%, 50% 50%, 50% 50%;
+  background-position: 0 0, 0 0, 0 0;
+}
+
+.skill-card {
+  @apply relative p-6 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105;
+  background: linear-gradient(145deg, hsl(var(--card-foreground) / 0.05) 0%, hsl(var(--card-foreground) / 0.01) 100%);
+  box-shadow: 0 4px 24px -1px hsl(var(--background) / 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(var(--card-foreground) / 0.08);
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, hsl(var(--card-foreground) / 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  @apply bg-input text-foreground placeholder-muted-foreground;
+}
+
+.dark input[type="text"],
+.dark input[type="email"],
+.dark textarea {
+  @apply bg-input text-foreground placeholder-muted-foreground;
+}
