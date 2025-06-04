@@ -32,7 +32,7 @@ const projects = [
     description: "A visually stunning portfolio website for a digital artist, featuring interactive galleries and smooth animations.",
     tags: ["React", "Three.js", "GSAP", "Netlify"],
     imageAlt: "Creative portfolio website with interactive 3D elements and image galleries",
-    imageSrc: "/p2.jpg", // Add this line
+    imageSrc: "https://raw.githubusercontent.com/Jagan2-jj/Portfolio-main/refs/heads/main/p2.jpg", // Add this line
     liveUrl: "https://example.com/project3",
     githubUrl: "https://github.com/username/project3"
   },
