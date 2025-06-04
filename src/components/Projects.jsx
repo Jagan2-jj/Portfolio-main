@@ -12,7 +12,7 @@ const projects = [
     description: "A comprehensive dashboard for e-commerce businesses with real-time analytics, inventory management, and customer insights.",
     tags: ["Html", "Css", "Javascript", "mongodb", "api"],
     imageAlt: "Epic food recipe dashboard showcasing a modern UI with charts and data visualizations",
-    imageSrc: "/p1.jpg", // Add this line
+    imageSrc: "https://raw.githubusercontent.com/Jagan2-jj/Portfolio-main/refs/heads/main/p1.jpg", // Add this line
     liveUrl: "https://example.com/project1",
     githubUrl: "https://github.com/Jagan2-jj/myproject"
   },
