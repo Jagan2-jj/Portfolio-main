@@ -19,9 +19,9 @@ const Contact = () => {
 
   // EmailJS Configuration with your provided IDs
   const EMAILJS_CONFIG = {
-    SERVICE_ID: 'service_91ho7n8',
+    SERVICE_ID:'service_91ho7n8',
     TEMPLATE_ID: 'template_kz6mz1v', 
-    PUBLIC_KEY: 'qqYB_Y3VsuVZinWkh'
+    PUBLIC_KEY: 'Xn2LRXSY2I2mRY_MW'
   };
 
   const [ref, inView] = useInView({
